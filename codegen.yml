@@ -1,0 +1,33 @@
+overwrite: true
+schema: "https://graphql.icy.tools/graphql"
+documents: "graphql/**/*.graphql"
+generates:
+  types/generated/graphql.tsx:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"
+    config:
+      reactApolloVersion: 3
+      withHooks: true
+      withHOC: false
+      withComponent: false
+      exportFragmentSpreadSubTypes: true
+      documentMode: graphQLTag
+  ./graphql.schema.json:
+    plugins:
+      - "introspection"
+  types/generated/page.tsx:
+    config:
+      documentMode: external
+      importDocumentNodeExternallyFrom: ./graphql
+      reactApolloVersion: 3
+      withHooks: true
+      contextType: "ApolloClientContext"
+      contextTypeRequired: true
+      apolloClientInstanceImport: "../../libs/withApollo"
+    preset: import-types
+    presetConfig:
+      typesPath: ./graphql
+    plugins:
+      - "graphql-codegen-apollo-next-ssr"

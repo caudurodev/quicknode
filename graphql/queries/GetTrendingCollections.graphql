@@ -1,0 +1,14 @@
+query GetTrendingCollections {
+  trendingCollections(orderBy: SALES, orderDirection: DESC) {
+    edges {
+      node {
+        address
+        ... on ERC721Contract {
+          name
+          unsafeOpenseaImageUrl
+          unsafeOpenseaExternalUrl
+        }
+      }
+    }
+  }
+}
