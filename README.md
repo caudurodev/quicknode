@@ -1,14 +1,7 @@
 
 
-# Quicknode Take-Home by Rodrigo Cauduro
-
-**! Answers to technical take-home questions at the bottom of this README !**
-
-Note: I am applying for a frontend role, but this was a fullstack take-home.
-<br>
-<br>
 ## Goals
-1) Connect to an Ethereum wallet (I chose Metamask)
+1) Connect to an Ethereum wallet (Metamask)
 2) Create an SSR app that connects to the [icy tools API](https://developers.icy.tools/) to grab the latest trending NFT collections after connecting to an Ethereum wallet
 <br>
 <br>
